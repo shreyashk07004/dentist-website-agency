@@ -1,0 +1,59 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html { scroll-behavior: smooth; scroll-padding-top: 88px; }
+  body {
+    @apply bg-white font-sans text-slate antialiased;
+    font-size: 16.5px;
+    line-height: 1.65;
+  }
+  h1, h2, h3, h4 { @apply font-display text-ink; letter-spacing: -0.015em; }
+  :focus-visible { outline: 2px solid #1A9BD7; outline-offset: 3px; }
+  ::selection { background: #E3F3FB; color: #13294B; }
+}
+
+@layer components {
+  .wrap { @apply mx-auto w-full max-w-content px-5 sm:px-8; }
+
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded px-5 py-3 font-display text-[15px] font-semibold transition-colors duration-150;
+  }
+  .btn-primary { @apply btn bg-action text-white hover:bg-action-hover; }
+  .btn-outline { @apply btn border border-ink/25 text-ink hover:border-ink hover:bg-ink hover:text-white; }
+  .btn-light { @apply btn bg-white text-ink hover:bg-clinic-light; }
+
+  /* Small label above section headings — a short rule + text, left-aligned */
+  .kicker {
+    @apply mb-3 flex items-center gap-3 font-display text-[13px] font-semibold uppercase tracking-[0.14em] text-clinic-dark;
+  }
+  .kicker::before { content: ''; @apply block h-px w-8 bg-clinic; }
+
+  .h-section { @apply text-[2rem] font-bold leading-[1.1] sm:text-[2.6rem]; }
+
+  .link-underline {
+    background: linear-gradient(currentColor, currentColor) 0 100% / 0 1px no-repeat;
+    transition: background-size 150ms ease;
+  }
+  .link-underline:hover { background-size: 100% 1px; }
+
+  .outline-numeral {
+    @apply font-display font-extrabold leading-none;
+    color: transparent;
+    -webkit-text-stroke: 1.5px #1A9BD7;
+  }
+
+  .field {
+    @apply w-full rounded border border-line bg-white px-3.5 py-3 text-[15px] text-ink placeholder:text-slate-soft/70 focus:border-clinic focus:outline-none focus:ring-2 focus:ring-clinic/20;
+  }
+  .label { @apply mb-1.5 block text-[13px] font-semibold text-ink; }
+}
+
+/* Scroll reveal */
+.reveal { opacity: 0; transform: translateY(14px); transition: opacity 600ms ease, transform 600ms ease; }
+.reveal.is-in { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .reveal { opacity: 1; transform: none; transition: none; }
+}

@@ -1,0 +1,61 @@
+// "What's bothering you?" finder. `treatments` refers to ids in treatments.js.
+export const symptoms = [
+  {
+    id: 'toothache',
+    label: 'Toothache',
+    likely: 'Usually a deep cavity or an infected nerve.',
+    advice: 'If the pain wakes you at night or lingers after hot/cold, the nerve may be involved and a root canal can save the tooth. A check-up and X-ray tells us for sure.',
+    treatments: ['checkup', 'filling', 'rct'],
+    urgent: true,
+  },
+  {
+    id: 'sensitivity',
+    label: 'Sensitive to cold',
+    likely: 'Worn enamel, receding gums or an early cavity.',
+    advice: 'Often fixed with a desensitising treatment or a small filling. Switching to a soft brush helps meanwhile.',
+    treatments: ['checkup', 'filling', 'cleaning'],
+  },
+  {
+    id: 'gums',
+    label: 'Bleeding gums',
+    likely: 'Tartar build-up causing gum inflammation (gingivitis).',
+    advice: 'A professional cleaning usually settles it within two weeks. Left alone it can loosen teeth over the years.',
+    treatments: ['cleaning', 'checkup'],
+  },
+  {
+    id: 'missing',
+    label: 'Missing tooth',
+    likely: 'A gap that neighbouring teeth slowly drift into.',
+    advice: 'Implant, bridge or denture — each suits different situations. We explain all three with costs before you decide.',
+    treatments: ['implant', 'crown', 'dentures'],
+  },
+  {
+    id: 'crooked',
+    label: 'Crooked teeth',
+    likely: 'Crowding, spacing or a bite that doesn’t meet evenly.',
+    advice: 'Braces or clear aligners. An orthodontic consultation with photos and a scan gives you a timeline and cost.',
+    treatments: ['braces', 'aligners'],
+  },
+  {
+    id: 'broken',
+    label: 'Chipped or broken',
+    likely: 'A crack or a broken filling, sometimes after a fall or biting something hard.',
+    advice: 'Come in soon even if it doesn’t hurt — small chips are a quick filling; bigger breaks may need a crown.',
+    treatments: ['filling', 'crown', 'rct'],
+    urgent: true,
+  },
+  {
+    id: 'child',
+    label: 'Child’s first visit',
+    likely: 'Ideal by age 1, or as soon as the first teeth appear.',
+    advice: 'A short, friendly look with the parent in the room. We check for early cavities and talk about brushing, sweets and bottle habits.',
+    treatments: ['kids', 'checkup'],
+  },
+  {
+    id: 'stains',
+    label: 'Yellow / stained',
+    likely: 'Surface stains (tea, coffee, tobacco) or natural yellowing.',
+    advice: 'A cleaning removes surface stains; whitening lightens the tooth itself. We tell you which one you actually need.',
+    treatments: ['cleaning', 'whitening'],
+  },
+];
